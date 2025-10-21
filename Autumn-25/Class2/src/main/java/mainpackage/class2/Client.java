@@ -68,12 +68,11 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", eventType='" + eventType + '\'' +
-                ", address='" + address + '\'' +
-                ", id=" + id +
-                ", dateOfEvent=" + dateOfEvent +
-                '}';
+        return
+                "Name: " + name + '\n' +
+                "Event Type: " + eventType + '\n' +
+                "Address: " + address + '\n' +
+                "ID: " + id + '\n' +
+                "Date of Event: " + dateOfEvent;
     }
 }

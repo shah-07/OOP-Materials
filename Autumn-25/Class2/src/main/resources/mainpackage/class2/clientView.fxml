@@ -20,7 +20,8 @@
       <Label layoutX="31.0" layoutY="246.0" text="ID: " />
       <DatePicker fx:id="dateOFEventDP" layoutX="402.0" layoutY="242.0" />
       <Label layoutX="319.0" layoutY="246.0" text="Date Of Event: " />
-      <Button layoutX="245.0" layoutY="300.0" mnemonicParsing="false" onAction="#createClientInstanceOA" prefHeight="42.0" prefWidth="150.0" text="Create Client Instance" />
-      <Label fx:id="outputLabel" layoutX="148.0" layoutY="365.0" prefHeight="222.0" prefWidth="358.0" wrapText="true" />
+      <Button layoutX="244.0" layoutY="282.0" mnemonicParsing="false" onAction="#createClientInstanceOA" prefHeight="42.0" prefWidth="150.0" text="Create Client Instance" />
+      <Label fx:id="outputLabel" layoutX="10.0" layoutY="388.0" prefHeight="222.0" prefWidth="620.0" wrapText="true" />
+      <Button layoutX="270.0" layoutY="334.0" mnemonicParsing="false" onAction="#showClientsButtonOA" prefHeight="34.0" prefWidth="98.0" text="Show CLients" />
    </children>
 </AnchorPane>
