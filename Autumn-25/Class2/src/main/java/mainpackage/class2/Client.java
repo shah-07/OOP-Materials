@@ -1,8 +1,9 @@
 package mainpackage.class2;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Client {
+public class Client implements Serializable {
     private String name, eventType, address;
     private int id;
     private LocalDate dateOfEvent;
