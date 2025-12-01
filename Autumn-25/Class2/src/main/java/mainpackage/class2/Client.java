@@ -1,5 +1,4 @@
 package mainpackage.class2;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -25,7 +24,6 @@ public class Client implements Serializable {
     public Client(int id) {
         this.id = id;
     }
-
 
     public String getName() {
         return name;
