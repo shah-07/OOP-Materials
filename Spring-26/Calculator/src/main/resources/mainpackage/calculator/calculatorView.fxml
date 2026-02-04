@@ -8,18 +8,19 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.calculator.CalculatorViewController">
    <children>
-      <TextField fx:id="aTF" layoutX="77.0" layoutY="47.0" />
-      <TextField fx:id="bTF" layoutX="417.0" layoutY="47.0" />
-      <Label layoutX="24.0" layoutY="51.0" text="Input a:" />
-      <Label layoutX="369.0" layoutY="51.0" text="Input b:" />
-      <Button layoutX="51.0" layoutY="123.0" mnemonicParsing="false" onAction="#addButtonOA" text="ADD" />
-      <Button layoutX="184.0" layoutY="123.0" mnemonicParsing="false" onAction="#subButtonOA" text="SUB" />
-      <Button layoutX="322.0" layoutY="123.0" mnemonicParsing="false" onAction="#multButtonOA" text="MULT" />
-      <Button layoutX="455.0" layoutY="123.0" mnemonicParsing="false" onAction="#divButtonOA" prefHeight="26.0" prefWidth="47.0" text="DIV" />
+      <TextField fx:id="aTF" layoutX="81.0" layoutY="97.0" />
+      <TextField fx:id="bTF" layoutX="421.0" layoutY="97.0" />
+      <Label layoutX="28.0" layoutY="101.0" text="Input a:" />
+      <Label layoutX="373.0" layoutY="101.0" text="Input b:" />
+      <Button layoutX="55.0" layoutY="173.0" mnemonicParsing="false" onAction="#addButtonOA" text="ADD" />
+      <Button layoutX="188.0" layoutY="173.0" mnemonicParsing="false" onAction="#subButtonOA" text="SUB" />
+      <Button layoutX="326.0" layoutY="173.0" mnemonicParsing="false" onAction="#multButtonOA" text="MULT" />
+      <Button layoutX="459.0" layoutY="173.0" mnemonicParsing="false" onAction="#divButtonOA" prefHeight="26.0" prefWidth="47.0" text="DIV" />
       <Label fx:id="outputLabel" alignment="TOP_CENTER" layoutX="168.0" layoutY="264.0" prefHeight="86.0" prefWidth="262.0" textFill="#00ef73">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
+      <Label fx:id="messageLabel" alignment="TOP_RIGHT" layoutX="389.0" layoutY="10.0" prefHeight="18.0" prefWidth="207.0" textFill="#003cf2" />
    </children>
 </AnchorPane>

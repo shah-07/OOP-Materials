@@ -12,10 +12,13 @@ public class CalculatorViewController
     private Label outputLabel;
     @javafx.fxml.FXML
     private TextField bTF;
+    @javafx.fxml.FXML
+    private Label messageLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
+
 
 
     @javafx.fxml.FXML
@@ -28,15 +31,22 @@ public class CalculatorViewController
         int bInt = Integer.parseInt(bStr);
 
         int resultInt = aInt * bInt;
+
         String resultStr = Integer.toString(resultInt);
-        outputLabel.setText(resultStr);
+        outputLabel.setText(aStr+"x"+bStr+" = "+resultStr);
+
+        messageLabel.setText("Multiplication done successfully");
+
+
+        aTF.clear();
+        bTF.clear();
 
     }
 
     @javafx.fxml.FXML
     public void addButtonOA(ActionEvent actionEvent) {
 
-        String aStr = aTF.getText();
+        String aStr = aTF.getText(); //20+30 2030
         String bStr = bTF.getText();
 
         int aInt = Integer.parseInt(aStr);
@@ -44,7 +54,10 @@ public class CalculatorViewController
 
         int resultInt = aInt + bInt;
         String resultStr = Integer.toString(resultInt);
-        outputLabel.setText(resultStr);
+        outputLabel.setText(aStr+"+"+bStr+" = "+resultStr);
+
+        messageLabel.setText("Addition done");
+
 
     }
 
