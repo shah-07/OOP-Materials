@@ -1,12 +1,11 @@
 package mainpackage.student;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class StudentViewController
 {
@@ -14,8 +13,6 @@ public class StudentViewController
     private TextField nameTF;
     @javafx.fxml.FXML
     private ComboBox <String> genderCB;
-    @javafx.fxml.FXML
-    private Label outputLabel;
     @javafx.fxml.FXML
     private TextField addressTF;
     @javafx.fxml.FXML
@@ -26,15 +23,37 @@ public class StudentViewController
     private DatePicker dobDP;
     @javafx.fxml.FXML
     private Label messageLabel;
+    @javafx.fxml.FXML
+    private TableColumn<Student, LocalDate> dobTC;
+    @javafx.fxml.FXML
+    private TableColumn <Student, String>genderTC;
+    @javafx.fxml.FXML
+    private TableColumn <Student, String> nameTC;
+    @javafx.fxml.FXML
+    private TableView <Student> studentTV;
+    @javafx.fxml.FXML
+    private TableColumn<Student, Integer> idTC;  //int -> Primitive type ; Integer -> Wrapper Class
+    @javafx.fxml.FXML
+    private ComboBox<String> genderCBForFiltering;
+    @javafx.fxml.FXML
+    private TextField areaTFForFiltering;
 
     @javafx.fxml.FXML
     public void initialize() {
 
         genderCB.getItems().addAll("Male", "Female");
+        genderCBForFiltering.getItems().addAll("Male", "Female");
+
+        nameTC.setCellValueFactory(new PropertyValueFactory<>("name"));
+        genderTC.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        idTC.setCellValueFactory(new PropertyValueFactory<>("id"));
+        dobTC.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
+
 
     }
 
     Student s;
+    ArrayList<Student> studentList= new ArrayList<>();
 
     @javafx.fxml.FXML
     public void createButtonOA(ActionEvent actionEvent) {
@@ -52,20 +71,41 @@ public class StudentViewController
 
         //String name, String phoneNumber, String address, String gender, int id, LocalDate dateOfBirth)
         s = new Student(name, phoneNumber, address, gender, id, dob);
-        messageLabel.setText("Student Created Successfully");
+
+        studentList.add(s);
+        messageLabel.setText("Student Added Successfully");
+
+        /*
+        if (s.getGender().equals("Female")){
+            studentList.add(s);
+            messageLabel.setText("Student Created Successfully");
+        }
+        else{
+            messageLabel.setText("Student is not Female");
+        }*/
 
         nameTF.clear();
         phoneNumberTF.clear();
         addressTF.clear();
         idTF.clear();
-        genderCB.getItems().clear();
+        genderCB.setValue(null);
         dobDP.setValue(null);
+
     }
 
     @javafx.fxml.FXML
     public void showObjectsButtonOA(ActionEvent actionEvent) {
 
-        outputLabel.setText(s.toString());
+        studentTV.getItems().clear();
+
+        for (Student s : studentList){
+            if ((s.getGender().equals(genderCBForFiltering.getValue())) && (s.getAddress().equals(areaTFForFiltering.getText()))){
+                studentTV.getItems().add(s);
+            }
+
+        }
+        //Directly shows all the object without filtering
+        //studentTV.getItems().addAll(studentList);
 
     }
 }

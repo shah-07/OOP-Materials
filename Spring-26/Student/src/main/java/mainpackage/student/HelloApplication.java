@@ -17,7 +17,8 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
         Student a = new Student("+8801782456", "Sah Paran", "Bashundhara", "Male", 2420181, LocalDate.of(2000, 5, 7));
-        System.out.println(a.toString());
+        //System.out.println(a.toString());
+        System.out.println(a.getGender().equals("Male"));
     }
 
     public static void main(String[] args) {
