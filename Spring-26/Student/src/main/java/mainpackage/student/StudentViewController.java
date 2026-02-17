@@ -61,7 +61,7 @@ public class StudentViewController
         String name, phoneNumber, address, gender;
         int id;
         LocalDate dob;
-
+/*
         id = Integer.parseInt(idTF.getText());
         name = nameTF.getText();
         phoneNumber = phoneNumberTF.getText();
@@ -69,8 +69,16 @@ public class StudentViewController
         gender = genderCB.getValue();
         dob = dobDP.getValue();
 
+ */
+
         //String name, String phoneNumber, String address, String gender, int id, LocalDate dateOfBirth)
-        s = new Student(name, phoneNumber, address, gender, id, dob);
+        s = new Student(
+                nameTF.getText(),
+                phoneNumberTF.getText(),
+                addressTF.getText(),
+                genderCB.getValue(),
+                Integer.parseInt(idTF.getText()),
+                dobDP.getValue());
 
         studentList.add(s);
         messageLabel.setText("Student Added Successfully");
@@ -102,6 +110,7 @@ public class StudentViewController
             if ((s.getGender().equals(genderCBForFiltering.getValue())) && (s.getAddress().equals(areaTFForFiltering.getText()))){
                 studentTV.getItems().add(s);
             }
+
 
         }
         //Directly shows all the object without filtering

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="607.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.midterm_01_2420181.AdvertisementViewController">
+   <children>
+      <TextField fx:id="adIdTF" layoutX="60.0" layoutY="22.0" />
+      <TextField fx:id="clientIdTF" layoutX="286.0" layoutY="22.0" />
+      <Label layoutX="21.0" layoutY="26.0" text="Ad Id:" />
+      <Label layoutX="227.0" layoutY="26.0" text="Client Id: " />
+      <Label layoutX="12.0" layoutY="71.0" text="Ad Type: " />
+      <ComboBox fx:id="adTypeCB" layoutX="60.0" layoutY="67.0" prefWidth="150.0" />
+      <Label layoutX="227.0" layoutY="71.0" text="For Charity: " />
+      <ComboBox fx:id="forCharityCB" layoutX="291.0" layoutY="67.0" prefWidth="150.0" />
+      <TextField fx:id="vatPercentTF" layoutX="542.0" layoutY="66.0" prefHeight="26.0" prefWidth="78.0" />
+      <TextField fx:id="billAmountTF" layoutX="534.0" layoutY="21.0" prefHeight="26.0" prefWidth="94.0" />
+      <Label layoutX="457.0" layoutY="26.0" text="Bill Amount: " />
+      <Label layoutX="466.0" layoutY="71.0" text="Vat Percent: " />
+      <DatePicker fx:id="deliveryDateDP" layoutX="93.0" layoutY="117.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="14.0" layoutY="121.0" text="Delivery Date: " />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="298.0" layoutY="117.0" mnemonicParsing="false" onAction="#addAdvertisementButtonOA" prefHeight="44.0" prefWidth="171.0" text="Validate &amp; Add New Advertisement To ArrayList" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TableView fx:id="adTV" layoutX="11.0" layoutY="170.0" prefHeight="200.0" prefWidth="630.0">
+        <columns>
+          <TableColumn fx:id="adIdTC" prefWidth="112.00003242492676" text="AD ID" />
+          <TableColumn fx:id="adTypeTC" prefWidth="114.39995574951172" text="AD Type" />
+            <TableColumn fx:id="clientIDTC" prefWidth="146.4000244140625" text="Client ID" />
+            <TableColumn fx:id="billAmountTC" prefWidth="116.79998779296875" text="Bill Amount" />
+            <TableColumn fx:id="deliveryDateTC" prefWidth="142.40005493164062" text="Delivery Date" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="adTypeFilterCB" layoutX="105.0" layoutY="393.0" prefWidth="150.0" />
+      <TextField fx:id="forCharityFilterTF" layoutX="467.0" layoutY="393.0" />
+      <Label layoutX="52.0" layoutY="397.0" text="Ad Type: " />
+      <Label layoutX="393.0" layoutY="397.0" text="For Charity: " />
+      <Button layoutX="282.0" layoutY="419.0" mnemonicParsing="false" onAction="#filterButtonOA" prefHeight="44.0" prefWidth="87.0" text="Filter" />
+      <Button layoutX="283.0" layoutY="474.0" mnemonicParsing="false" onAction="#processButtonOA" prefHeight="44.0" prefWidth="87.0" text="Process" />
+      <Label fx:id="outputLabel" layoutX="192.0" layoutY="529.0" prefHeight="63.0" prefWidth="274.0" />
+   </children>
+</AnchorPane>
