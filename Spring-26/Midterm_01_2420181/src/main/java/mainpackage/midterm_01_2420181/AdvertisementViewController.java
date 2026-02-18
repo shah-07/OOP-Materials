@@ -14,15 +14,11 @@ public class AdvertisementViewController
     @javafx.fxml.FXML
     private DatePicker deliveryDateDP;
     @javafx.fxml.FXML
-    private TextField forCharityFilterTF;
-    @javafx.fxml.FXML
     private TextField clientIdTF;
     @javafx.fxml.FXML
     private ComboBox<String> adTypeCB;
     @javafx.fxml.FXML
     private TextField billAmountTF;
-    @javafx.fxml.FXML
-    private TextField vatPercentTF;
     @javafx.fxml.FXML
     private ComboBox<String> adTypeFilterCB;
     @javafx.fxml.FXML
@@ -43,6 +39,8 @@ public class AdvertisementViewController
     private TableColumn<Advertisement, String> adTypeTC;
 
     ArrayList<Advertisement> adList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private TextField clientIdForFilterTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,38 +60,57 @@ public class AdvertisementViewController
     @javafx.fxml.FXML
     public void processButtonOA(ActionEvent actionEvent) {
 
+        int count = 0;
+        for (Advertisement a : adTV.getItems()){
+            if(a.getIsForCharity().equals("True")){
+                count++;
+            }
+        }
+        String countStr = Integer.toString(count);
+        outputLabel.setText("Number of advertisement for charity is: "+countStr);
+
     }
 
     @javafx.fxml.FXML
     public void filterButtonOA(ActionEvent actionEvent) {
+
+        adTV.getItems().clear();
+
+        //adTV.getItems().addAll(adList); 5marks (Without filtering)
+        for (Advertisement a: adList){
+            if(adTypeFilterCB.getValue().equals(a.getAdvType()) && Integer.parseInt(clientIdForFilterTF.getText()) == a.getClientId()){
+                adTV.getItems().add(a);
+            }
+        }
+
+
     }
 
     @javafx.fxml.FXML
     public void addAdvertisementButtonOA(ActionEvent actionEvent) {
 
-       LocalDate currentDate = LocalDate.now();
+        Alert alert = new Alert(Alert.AlertType.ERROR);
 
-       if(deliveryDateDP.getValue().isBefore(currentDate)){
-           Alert a = new Alert(Alert.AlertType.ERROR);
-           a.setContentText("Delivery Date cannot be previous date");
-           a.showAndWait();
-           return;
-       }
+        if (deliveryDateDP.getValue().isBefore(LocalDate.now())){
+            alert.setContentText("Delivery cannot be previous date");
+            alert.showAndWait();
+        }
 
         float vatPercent = 0;
-
-        if(forCharityCB.getValue().equals("True")){
+        if (forCharityCB.getValue().equals("True")){
             vatPercent = 0;
         }
-        else if ((forCharityCB.getValue().equals("False")) && (adTypeCB.getValue().equals("Print"))){
+        else if (forCharityCB.getValue().equals("False") && adTypeCB.getValue().equals("Print")){
             vatPercent = 5;
         }
-        else if ((forCharityCB.getValue().equals("False")) && (adTypeCB.getValue().equals("Video") || adTypeCB.getValue().equals("Audio"))){
+        else if ((forCharityCB.getValue().equals("False")) &&
+                (adTypeCB.getValue().equals("Audio")||adTypeCB.getValue().equals("Video"))){
             vatPercent = 10;
         }
-        else if((forCharityCB.getValue().equals("False")) && (adTypeCB.getValue().equals("BillBoard"))) {
+        else if (forCharityCB.getValue().equals("False") && adTypeCB.getValue().equals("BillBoard")){
             vatPercent = 15;
         }
+
 
         Advertisement a = new Advertisement(
                 Integer.parseInt(adIdTF.getText()),
@@ -104,5 +121,7 @@ public class AdvertisementViewController
                 vatPercent,
                 deliveryDateDP.getValue()
                 );
+
+        adList.add(a);
     }
 }
