@@ -124,4 +124,6 @@ public class AdvertisementViewController
 
         adList.add(a);
     }
+
+
 }
