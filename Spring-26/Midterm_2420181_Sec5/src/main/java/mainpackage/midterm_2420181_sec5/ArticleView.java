@@ -40,6 +40,8 @@ public class ArticleView
     ArrayList<Article> articleList = new ArrayList<>();
     @javafx.fxml.FXML
     private Label messageLabel;
+    @javafx.fxml.FXML
+    private TextArea outpulTA;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -53,6 +55,8 @@ public class ArticleView
 
     @javafx.fxml.FXML
     public void showToTableButtonOA(ActionEvent actionEvent) {
+        articleTV.getItems().addAll(articleList);
+
     }
 
     @javafx.fxml.FXML
@@ -88,13 +92,31 @@ public class ArticleView
         //articleList.add(a);
 
         for (Article x : articleList){
-            if(x.getTitle().equals(titleTF.getText())){
-                messageLabel.setText("Article already exists");
+            if (x.getTitle().equals(titleTF.getText())){
+                messageLabel.setText("Title already exists");
                 return;
             }
         }
-        articleList.add(a);
-        messageLabel.setText("Article added successfully");
 
+        articleList.add(a);
+        messageLabel.setText("Article added");
+
+
+    }
+
+    @javafx.fxml.FXML
+    public void articleWithHighestNumberOfAuthorsButtonOA(ActionEvent actionEvent) {
+
+
+        int numAut = 0;
+        Article highestNumAut = null;
+
+        for (Article a : articleTV.getItems()){
+            if (a.getNumberOfAuthors()>numAut){
+                numAut = a.getNumberOfAuthors();
+                highestNumAut = a;
+            }
+        }
+        outpulTA.setText(highestNumAut.getTitle());
     }
 }
