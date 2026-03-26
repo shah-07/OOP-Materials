@@ -119,4 +119,8 @@ public class ArticleView
         }
         outpulTA.setText(highestNumAut.getTitle());
     }
+
+    public void something(){
+        //
+    }
 }

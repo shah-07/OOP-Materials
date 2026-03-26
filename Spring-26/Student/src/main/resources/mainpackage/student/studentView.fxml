@@ -21,7 +21,7 @@
       <Label layoutX="334.0" layoutY="93.0" text="ID:" />
       <ComboBox fx:id="genderCB" layoutX="386.0" layoutY="136.0" prefWidth="150.0" />
       <Label layoutX="334.0" layoutY="140.0" text="Gender: " />
-      <Button layoutX="249.0" layoutY="244.0" mnemonicParsing="false" onAction="#createButtonOA" prefHeight="40.0" prefWidth="101.0" text="Create Object" />
+      <Button layoutX="123.0" layoutY="244.0" mnemonicParsing="false" onAction="#createButtonOA" prefHeight="40.0" prefWidth="101.0" text="Create Object" />
       <Button layoutX="473.0" layoutY="497.0" mnemonicParsing="false" onAction="#showObjectsButtonOA" prefHeight="40.0" prefWidth="101.0" text="Show Objects" />
       <DatePicker fx:id="dobDP" layoutX="111.0" layoutY="200.0" />
       <Label layoutX="26.0" layoutY="204.0" text="Date Of Birth: " />
@@ -38,5 +38,7 @@
       <Label layoutX="242.0" layoutY="508.0" text="Gender: " />
       <Label layoutX="31.0" layoutY="508.0" text="Area:" />
       <TextField fx:id="areaTFForFiltering" layoutX="75.0" layoutY="504.0" />
+      <Button layoutX="283.0" layoutY="244.0" mnemonicParsing="false" onAction="#loadAllButtonOA" prefHeight="40.0" prefWidth="101.0" text="Load All" />
+      <Button layoutX="461.0" layoutY="244.0" mnemonicParsing="false" onAction="#showFullInfoButtonOA" prefHeight="40.0" prefWidth="101.0" text="Show Full Info" />
    </children>
 </AnchorPane>

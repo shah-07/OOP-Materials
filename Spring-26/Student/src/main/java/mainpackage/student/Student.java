@@ -17,14 +17,17 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public Student() {
+    }
+
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address='" + address + '\'' +
-                ", gender='" + gender + '\'' +
-                ", id=" + id +
-                ", dateOfBirth=" + dateOfBirth;
+        return "Name: " + name + '\n' +
+                "Phone Number: " + phoneNumber + '\n' +
+                "Address: " + address + '\n' +
+                "Gender: " + gender + '\n' +
+                "ID: " + id + '\n' +
+                "Date Of Birth: " + dateOfBirth;
     }
 
     public String getName() {

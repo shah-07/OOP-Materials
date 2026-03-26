@@ -1,8 +1,11 @@
 package mainpackage.student;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -71,7 +74,7 @@ public class StudentViewController
 
  */
 
-        //String name, String phoneNumber, String address, String gender, int id, LocalDate dateOfBirth)
+        //String name, String phoneNumber, String address, String gender, int id, LocalDate dateOfBirth
         s = new Student(
                 nameTF.getText(),
                 phoneNumberTF.getText(),
@@ -116,5 +119,32 @@ public class StudentViewController
         //Directly shows all the object without filtering
         //studentTV.getItems().addAll(studentList);
 
+    }
+
+    @javafx.fxml.FXML
+    public void loadAllButtonOA(ActionEvent actionEvent) {
+
+        studentTV.getItems().clear();
+        studentTV.getItems().addAll(studentList);
+
+    }
+
+    @javafx.fxml.FXML
+    public void showFullInfoButtonOA() {
+
+        try {
+            Student s = studentTV.getSelectionModel().getSelectedItem();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fullInfoView.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            FullInfoViewController nextController = fxmlLoader.getController();
+            nextController.fullInfoLabel.setText(s.toString());
+            Stage stage = new Stage();
+            stage.setTitle("Information");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e){
+            System.out.println(System.err);
+        }
     }
 }

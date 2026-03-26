@@ -58,8 +58,5 @@ public class Article {
        LocalDate date = a.getPublicationDate();
 
        int year = date.getYear();
-
-
     }
-
 }
