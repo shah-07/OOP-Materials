@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.sceneswithching.FirstWindowController">
    <children>
@@ -10,5 +10,6 @@
       <Button layoutX="53.0" layoutY="130.0" mnemonicParsing="false" onAction="#switchButtonOA" prefHeight="46.0" prefWidth="81.0" text="Switch" />
       <Button layoutX="53.0" layoutY="185.0" mnemonicParsing="false" onAction="#partialButtonOA" prefHeight="46.0" prefWidth="81.0" text="Partial" />
       <AnchorPane fx:id="partialPane" layoutX="182.0" layoutY="10.0" prefHeight="366.0" prefWidth="404.0" />
+      <TextField fx:id="tf" layoutX="53.0" layoutY="261.0" />
    </children>
 </AnchorPane>

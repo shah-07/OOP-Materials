@@ -1,0 +1,37 @@
+package mainpackage.sceneswitching;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import java.io.IOException;
+
+public class SwitchWindowController
+{
+    @javafx.fxml.FXML
+    private AnchorPane mainPane;
+    @javafx.fxml.FXML
+    private Label label;
+
+    String toRecieveStringVar;
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void homeButtonOA(ActionEvent actionEvent) throws IOException {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("InitialWindow.fxml"));
+            Node node = fxmlLoader.load();
+            mainPane.getChildren().setAll(node);
+
+    }
+
+    @javafx.fxml.FXML
+    public void viewButtonOA(ActionEvent actionEvent) {
+
+        label.setText(toRecieveStringVar);
+
+    }
+}

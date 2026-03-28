@@ -3,12 +3,16 @@ package mainpackage.sceneswithching;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 public class SwitchWindowController
 {
     @javafx.fxml.FXML
     private AnchorPane mainPane;
+    @javafx.fxml.FXML
+    private Label label;
+    String a;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -25,6 +29,12 @@ public class SwitchWindowController
         catch (Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    @javafx.fxml.FXML
+    public void showButtonOA(ActionEvent actionEvent) {
+        label.setText(a);
 
     }
 }
