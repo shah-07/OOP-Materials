@@ -40,5 +40,6 @@
       <TextField fx:id="areaTFForFiltering" layoutX="75.0" layoutY="504.0" />
       <Button layoutX="283.0" layoutY="244.0" mnemonicParsing="false" onAction="#loadAllButtonOA" prefHeight="40.0" prefWidth="101.0" text="Load All" />
       <Button layoutX="461.0" layoutY="244.0" mnemonicParsing="false" onAction="#showFullInfoButtonOA" prefHeight="40.0" prefWidth="101.0" text="Show Full Info" />
+      <Button layoutX="32.0" layoutY="252.0" mnemonicParsing="false" onAction="#deleteButtonOA" text="Delete" />
    </children>
 </AnchorPane>

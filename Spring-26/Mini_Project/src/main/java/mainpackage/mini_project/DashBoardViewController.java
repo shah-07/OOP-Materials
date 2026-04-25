@@ -5,7 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import java.io.IOException;
+
+import java.io.*;
 
 public class DashBoardViewController
 {
@@ -15,6 +16,8 @@ public class DashBoardViewController
     private Label idLabel;
     @javafx.fxml.FXML
     private Label nameLabel;
+    @javafx.fxml.FXML
+    private TextField input;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,6 +34,19 @@ public class DashBoardViewController
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPageView.fxml"));
         Node node = loader.load();
         mainPane.getChildren().setAll(node);
+
+    }
+
+    @javafx.fxml.FXML
+    public void add(ActionEvent actionEvent) throws IOException{
+
+        File f = new File("some.txt");
+        FileOutputStream fos = new FileOutputStream(f);
+        FileWriter fw = new FileWriter(f);
+        fw.write("Hi");
+        fw.close();
+
+
 
     }
 }

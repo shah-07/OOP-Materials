@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.student_bin.CreateStudentViewController">
+   <children>
+      <TextField fx:id="nameTF" layoutX="97.0" layoutY="83.0" />
+      <Label layoutX="51.0" layoutY="87.0" text="Name: " />
+      <TextField fx:id="addressTF" layoutX="110.0" layoutY="123.0" prefHeight="94.0" prefWidth="190.0" />
+      <Label layoutX="45.0" layoutY="154.0" text="Address: " />
+      <Label layoutX="306.0" layoutY="87.0" text="Department: " />
+      <TextField fx:id="idTF" layoutX="392.0" layoutY="123.0" />
+      <Label layoutX="340.0" layoutY="127.0" text="ID:" />
+      <ComboBox fx:id="genderCB" layoutX="392.0" layoutY="170.0" prefWidth="150.0" />
+      <Label layoutX="340.0" layoutY="174.0" text="Gender: " />
+      <Button layoutX="154.0" layoutY="288.0" mnemonicParsing="false" onAction="#createButtonOA" prefHeight="40.0" prefWidth="101.0" text="Create Object" />
+      <DatePicker fx:id="dobDP" layoutX="117.0" layoutY="234.0" />
+      <Label layoutX="32.0" layoutY="238.0" text="Date Of Birth: " />
+      <Label fx:id="messageLabel" alignment="CENTER_RIGHT" layoutX="364.0" layoutY="2.0" prefHeight="18.0" prefWidth="236.0" />
+      <ComboBox fx:id="departmentCB" layoutX="385.0" layoutY="83.0" prefWidth="150.0" />
+      <Button layoutX="354.0" layoutY="288.0" mnemonicParsing="false" onAction="#nextSceneButtonOA" prefHeight="40.0" prefWidth="101.0" text="Next Scene" />
+   </children>
+</AnchorPane>

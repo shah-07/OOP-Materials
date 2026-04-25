@@ -147,4 +147,22 @@ public class StudentViewController
             System.out.println(System.err);
         }
     }
+
+    @javafx.fxml.FXML
+    public void deleteButtonOA(ActionEvent actionEvent) {
+
+        Student selectedStudent = studentTV.getSelectionModel().getSelectedItem();
+
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+        a.setContentText("Sure delete?");
+        if (a.showAndWait().isPresent()){
+            for (Student s : studentList){
+                if (selectedStudent.equals(s)){
+                    studentList.remove(s);
+                    messageLabel.setText("Selected Student deleted");
+                }
+            }
+        }
+
+    }
 }

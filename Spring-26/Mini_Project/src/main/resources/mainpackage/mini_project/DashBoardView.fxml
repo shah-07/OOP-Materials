@@ -2,13 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.mini_project.DashBoardViewController">
    <children>
       <Label fx:id="nameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="21.0" prefHeight="33.0" prefWidth="187.0" text="Welcome Mr/Ms. X" />
       <Label fx:id="idLabel" layoutX="14.0" layoutY="46.0" text="ID: " />
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#logoutButtonOA" text="Logout" />
+      <TextField fx:id="input" layoutX="219.0" layoutY="95.0" />
+      <Button layoutX="268.0" layoutY="141.0" mnemonicParsing="false" onAction="#add" text="Add" />
    </children>
 </AnchorPane>
